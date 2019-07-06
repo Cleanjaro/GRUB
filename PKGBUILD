@@ -11,6 +11,7 @@ _IA32_EFI_IN_ARCH_X64="1"
 ## "1" to enable EMU build, "0" to disable
 _GRUB_EMU_BUILD="1"
 
+_GRUB_INT_VER="2.04"
 _GRUB_EXTRAS_COMMIT="136763a4cc9ca3a4f59d05b79eede2159d6f441e"
 _GNULIB_COMMIT="9ce9be2ef0cb1180e35dfe9dfbbe90d774b374bd"
 _UNIFONT_VER="12.1.02"
@@ -26,6 +27,7 @@ pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
 pkgrel=1
+epoch=1
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL3')
@@ -166,6 +168,9 @@ prepare() {
 
 	echo "Fix OS naming FS#33393..."
 	sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
+
+	msg "Bump Version to ${pkgver}"
+	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}|g" "configure.ac"
 
 	echo "Pull in latest language files..."
 	./linguas.sh
