@@ -12,6 +12,7 @@ _IA32_EFI_IN_ARCH_X64="1"
 _GRUB_EMU_BUILD="1"
 
 _GRUB_INT_VER="2.04"
+_GRUB_COMMIT="2a2e10c1b39672de3d5da037a50d5c371f49b40d"
 _GRUB_EXTRAS_COMMIT="136763a4cc9ca3a4f59d05b79eede2159d6f441e"
 _GNULIB_COMMIT="9ce9be2ef0cb1180e35dfe9dfbbe90d774b374bd"
 _UNIFONT_VER="12.1.02"
@@ -26,7 +27,7 @@ pkgname='grub'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 epoch=1
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
@@ -61,6 +62,7 @@ if [[ "${_GRUB_EMU_BUILD}" == "1" ]]; then
 fi
 
 source=("git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}"
+#       "git+https://git.savannah.gnu.org/git/grub.git#commit=${_GRUB_COMMIT}"
         "git+https://git.savannah.gnu.org/git/grub-extras.git#commit=${_GRUB_EXTRAS_COMMIT}"
         "git+https://git.savannah.gnu.org/git/gnulib.git#commit=${_GNULIB_COMMIT}"
         "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"
