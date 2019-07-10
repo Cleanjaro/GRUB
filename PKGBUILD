@@ -4,7 +4,6 @@
 # Ronald van Haren <ronald.archlinux.org>
 # Keshav Padram <the.ridikulus.rat.gmail.com>
 
-
 ## "1" to enable IA32-EFI build in Arch x86_64, "0" to disable
 _IA32_EFI_IN_ARCH_X64="1"
 
