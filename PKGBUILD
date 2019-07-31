@@ -168,7 +168,7 @@ prepare() {
 	sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
 
 	msg "Bump Version to ${pkgver}"
-	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}~yorper|g" "configure.ac"
+	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}~CFE|g" "configure.ac"
 
 	echo "Pull in latest language files..."
 	./linguas.sh
