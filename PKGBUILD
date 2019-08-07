@@ -25,7 +25,7 @@ pkgname='grub-clean'
 pkgdesc='GNU GRand Unified Bootloader (2) Without silent boot patches'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL3')
@@ -36,8 +36,8 @@ install="${pkgname}.install"
 options=('!makeflags')
 
 conflicts=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-legacy'
-           'grub-fedora' 'grub-quiet-fedora' 'grub-quiet-test' 'grub-quiet')
-replaces=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-quiet')
+           'grub-fedora' 'grub-quiet-fedora' 'grub-quiet-test' 'grub-quiet' 'grub')
+replaces=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-quiet' 'grub')
 provides=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}"
           "grub=$pkgver-$pkgrel" "grub-quiet=$pkgver-$pkgrel")
 
@@ -85,7 +85,7 @@ sha256sums=('SKIP'
             'cf00c96aee37e0a73c1ab6ed6ccfe74fa2b2859f55cd315a4caa6c880ce7aeba'
             '20b2b6e7f501596b5cce6ffa05906980427f760c03d308d0e045cf2ecf47bb0e'
             '50108fd7a73885bb17f72483cb59a049350b19cad6c8bdbf2a7d0e85c6b6b500'
-            '58ecf92e28b2889f4b934fc3e433c10b49b8871b59a87c6506cb94ad5aaf3f2f'
+            '17dce35ada2e871521850918e9f7ddbc41b5561ba53c0a69704a8f4820e6b334'
             '7fc95d49c0febe98a76e56b606a280565cb736580adecf163bc6b5aca8e7cbd8'
             '467b0101154076fee99d9574a5fb6b772a3923cc200a1f4ca08fe17be8d68111'
             '1488d7f3924bd7385a222e3e9685cdb1ecb39f3d6f882da6b5907b898f5b8f08')
@@ -168,7 +168,7 @@ prepare() {
 	sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
 
 	msg "Bump Version to ${pkgver}"
-	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}~CFE|g" "configure.ac"
+	sed -i -e "s|${_GRUB_INT_VER}|${pkgver}~Cleanjaro|g" "configure.ac"
 
 	echo "Pull in latest language files..."
 	./linguas.sh
