@@ -21,11 +21,11 @@ _UNIFONT_VER="12.1.02"
 [[ "${CARCH}" == "x86_64" ]] && _EMU_ARCH="x86_64"
 [[ "${CARCH}" == "i686" ]] && _EMU_ARCH="i386"
 
-pkgname='grub-clean'
-pkgdesc='GNU GRand Unified Bootloader (2) Without silent boot patches'
+pkgname='grub'
+pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=2
+pkgrel=3
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL3')
@@ -36,8 +36,8 @@ install="${pkgname}.install"
 options=('!makeflags')
 
 conflicts=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-legacy'
-           'grub-fedora' 'grub-quiet-fedora' 'grub-quiet-test' 'grub-quiet' 'grub')
-replaces=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-quiet' 'grub')
+           'grub-fedora' 'grub-quiet-fedora' 'grub-quiet-test' 'grub-quiet' 'grub-clean')
+replaces=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-quiet' 'grub-clean')
 provides=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}"
           "grub=$pkgver-$pkgrel" "grub-quiet=$pkgver-$pkgrel")
 
