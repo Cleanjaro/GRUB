@@ -39,7 +39,7 @@ conflicts=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-le
            'grub-fedora' 'grub-quiet-fedora' 'grub-quiet' 'grub-clean')
 replaces=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}" 'grub-quiet' 'grub-clean')
 provides=('grub-common' 'grub-bios' 'grub-emu' "grub-efi-${_EFI_ARCH}"
-          "grub=$pkgver-$pkgrel" "grub-clean=$pkgver-$pkgrel")
+          "grub=$pkgver-$pkgrel")
 
 makedepends=('git' 'rsync' 'xz' 'freetype2' 'ttf-dejavu' 'python' 'autogen'
              'texinfo' 'help2man' 'gettext' 'device-mapper' 'fuse2')
