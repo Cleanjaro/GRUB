@@ -66,7 +66,7 @@ source=("git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}"
         "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"
         'grub-export-path.patch'
         'grub-add-GRUB_COLOR_variables.patch'
-        'grub-manjaro-modifications.patch'
+        'grub-cleanjaro-modifications.patch'
         'grub-use-efivarfs.patch'
         'background.png'
         'grub.default'
@@ -138,8 +138,8 @@ prepare() {
 	patch -Np1 -i "${srcdir}/grub-add-GRUB_COLOR_variables.patch"
 	echo
 
-	msg "Patch to include Manjaro Linux Modifications"
-	patch -Np1 -i "${srcdir}/grub-manjaro-modifications.patch"
+	msg "Patch to include Cleanjaro Linux Modifications"
+	patch -Np1 -i "${srcdir}/grub-cleanjaro-modifications.patch"
 	echo
 
         # delete line due man h2m
