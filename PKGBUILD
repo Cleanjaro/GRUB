@@ -60,10 +60,14 @@ if [[ "${_GRUB_EMU_BUILD}" == "1" ]]; then
                  'sdl: For grub-emu SDL support')
 fi
 
-source=("git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}"
+validpgpkeys=('E53D497F3FA42AD8C9B4D1E835A93B74E82E4209'  # Vladimir 'phcoder' Serbinenko <phcoder@gmail.com>
+              'BE5C23209ACDDACEB20DB0A28C8189F1988C2166'  # Daniel Kiper <dkiper@net-space.pl>
+              '95D2E9AB8740D8046387FD151A09227B1F435A33') # Paul Hardy <unifoundry@unifoundry.com>
+
+source=("git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}?signed"
         "git+https://git.savannah.gnu.org/git/grub-extras.git#commit=${_GRUB_EXTRAS_COMMIT}"
         "git+https://git.savannah.gnu.org/git/gnulib.git#commit=${_GNULIB_COMMIT}"
-        "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"
+        "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"{,.sig}
         'grub-export-path.patch'
         'grub-add-GRUB_COLOR_variables.patch'
         'grub-cleanjaro-modifications.patch'
