@@ -10,7 +10,7 @@
 _IA32_EFI_IN_ARCH_X64="1"
 
 ## "1" to enable EMU build, "0" to disable
-_GRUB_EMU_BUILD="1"
+_GRUB_EMU_BUILD="0"
 
 _GRUB_INT_VER="2.04"
 _GRUB_EXTRAS_COMMIT="136763a4cc9ca3a4f59d05b79eede2159d6f441e"
@@ -27,7 +27,7 @@ pkgname='grub'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=4
+pkgrel=5
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL3')
@@ -82,12 +82,13 @@ sha256sums=('SKIP'
             'SKIP'
             'SKIP'
             '04d652be1e28a6d464965c75c71ac84633085cd0960c2687466651c34c94bd89'
+            'SKIP'
             '63c611189a60d68c6ae094f2ced91ac576b3921b7fd2e75a551c2dc6baefc35e'
             'a5198267ceb04dceb6d2ea7800281a42b3f91fd02da55d2cc9ea20d47273ca29'
             '5cb8d4f590a2b61599efa3749df0e8584b7ceb37b9d5cb030c7dc6261f5d0aba'
             '20b2b6e7f501596b5cce6ffa05906980427f760c03d308d0e045cf2ecf47bb0e'
             '50108fd7a73885bb17f72483cb59a049350b19cad6c8bdbf2a7d0e85c6b6b500'
-            '17dce35ada2e871521850918e9f7ddbc41b5561ba53c0a69704a8f4820e6b334'
+            'cd398373c76c78b177cb2a00c7173ed027b0410b22c5c1b087e4f13f9f8df5c6'
             '7fc95d49c0febe98a76e56b606a280565cb736580adecf163bc6b5aca8e7cbd8'
             '467b0101154076fee99d9574a5fb6b772a3923cc200a1f4ca08fe17be8d68111'
             '1488d7f3924bd7385a222e3e9685cdb1ecb39f3d6f882da6b5907b898f5b8f08')
