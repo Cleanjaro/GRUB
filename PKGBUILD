@@ -27,7 +27,7 @@ pkgname='grub'
 pkgdesc='GNU GRand Unified Bootloader (2)'
 _pkgver=2.04
 pkgver=${_pkgver/-/}
-pkgrel=5
+pkgrel=6
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL3')
@@ -70,8 +70,8 @@ source=("git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}?signe
         "https://ftp.gnu.org/gnu/unifont/unifont-${_UNIFONT_VER}/unifont-${_UNIFONT_VER}.bdf.gz"{,.sig}
         'grub-export-path.patch'
         'grub-add-GRUB_COLOR_variables.patch'
-        'grub-cleanjaro-modifications.patch'
         'grub-use-efivarfs.patch'
+        '0001-10_linux-detect-archlinux-initramfs.patch'
         'background.png'
         'grub.default'
         'grub.cfg'
@@ -143,8 +143,9 @@ prepare() {
 	patch -Np1 -i "${srcdir}/grub-add-GRUB_COLOR_variables.patch"
 	echo
 
-	msg "Patch to include Cleanjaro Linux Modifications"
-	patch -Np1 -i "${srcdir}/grub-cleanjaro-modifications.patch"
+	# Patch taken from Arch Linux
+	msg "Patch to detect Cleanjaro Linux initramfs images by grub-mkconfig..."
+	patch -Np1 -i "${srcdir}/0001-10_linux-detect-archlinux-initramfs.patch"
 	echo
 
         # delete line due man h2m
